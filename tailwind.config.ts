@@ -9,10 +9,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        light: "#f0e7db",
+        dark: "#2c2b3c",
+        accent: "#ff6f61",
+        textLight: "#4a4a4a",
+        textDark: "#d4d4d4",
       },
     },
   },
+  darkMode: "class",
   plugins: [],
 } satisfies Config;
