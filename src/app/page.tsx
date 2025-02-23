@@ -1,8 +1,13 @@
 import TodoList from "@/components/TodoList";
-import { getTodos } from "@/lib/db";
+
+async function fetchTodos() {
+  const res = await fetch("http://localhost:6969/todos", { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to fetch todos!");
+  return res.json();
+}
 
 export default async function Home() {
-  const initialTodos = await getTodos();
+  const initialTodos = await fetchTodos();
 
   return (
     <div>
