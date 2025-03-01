@@ -4,8 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 type Todo = {
-  id: number;
-  text: string;
+  id: number; text: string;
   completed: boolean;
 };
 
@@ -59,7 +58,12 @@ export default function TodoList({ initialTodos }: TodoListProps) {
   };
 
   return (
-    <div className="space-y-4">
+    <motion.div
+      className="space-y-4"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 1, y: -20 }}
+    >
       <form onSubmit={handleAddTodo} className="flex gap-2">
         <input
           type="text"
@@ -147,6 +151,6 @@ export default function TodoList({ initialTodos }: TodoListProps) {
           )
         ))}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 }

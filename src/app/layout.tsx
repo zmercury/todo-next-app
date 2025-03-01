@@ -29,11 +29,11 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col items-center py-8">
         <header className="mb-8">
           <motion.h1
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: -20, x: -20 }}
+            animate={{ opacity: 1, y: 0, x: 0 }}
             className="text-4xl font-bold text-accent"
           >
-            Todo App
+            Todo's
           </motion.h1>
           <motion.button
             whileHover={{ scale: 1.1 }}
